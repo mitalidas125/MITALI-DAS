@@ -1,32 +1,22 @@
-import random
+try:
+   a=int(input("enter the first number"))
+   b=int(input("enter the second number"))
 
-'''
-1 for snake
--1 for water
-0 for gun'''
+   print("what kind of operation do you want to perfrom ,press+ for additions\npress- for substractions \npress /for division\npress for multiplications")
 
-computer=random.choice([-1,1,0])
-youstr=input("enter your choice:")
-youDict={"s":1 ,"w":-1, "g":0}
-reverseDict={1:"snake",-1:"water", 0:"gun"}
+   o=input("enter operations :")
+   match o:
+      case "+":
+         print(f"the result is :{a+b}")
+      case "-":
+         print(f"the result is :{a-b}")
+      case "/":
+         print(f"the result is :{a/b}")
+      case "*":
+         print(f"the result is :{a*b}")
+      case default:
+         print(f"there was an error")
 
-you=youDict[youstr]
-print(f"you choose {reverseDict[you]}\n computer choose {reverseDict[computer]}")
-if(computer==you):
-   print("its a draw")
-else:
-   if(computer==-1 and you==1):
-      print("you win!")
-   elif(computer==-1 and you==0):
-      print("you loss!")
-   elif(computer==1 and you==1):
-      print("you los!")
-   elif(computer==1 and you==0):
-      print("you win!")
-   elif(computer==0 and you==-1):
-      print("you win!")
-   elif(computer==0 and you==1):
-      print("you loss!")
-   else:
-      print("something wrong")
-      
+
+except Exception as e:
+   print("enter a valid value of a and b")
